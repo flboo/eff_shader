@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: spritelerp
-  m_Shader: {fileID: 4800000, guid: b52b12816417f4c7a9a42a3891d2cacc, type: 3}
+  m_Name: "mat\u2014\u2014slobe"
+  m_Shader: {fileID: 4800000, guid: d0e9adcf373a04ce5af0e8d743610fa6, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d33d1f2df09c94525ac130e458b33216, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NewTex_1:
@@ -31,13 +31,17 @@ Material:
     - AnimatedMouvementUV_Speed_1: 0.239
     - AnimatedMouvementUV_X_1: 0.268
     - AnimatedMouvementUV_Y_1: 0.554
+    - Disolve_Value: 0.238
+    - Seed: 8
     - _AlphaIntensity_Fade_1: 6
-    - _AutomaticLerp_Spee_1: 0
+    - _AutomaticLerp_Spee_1: 0.595
     - _ColorMask: 15
+    - _EdgeOnly: 1
     - _Glossiness: 0.5
     - _LerpUV_Fade_1: 0
     - _Metallic: 0
-    - _SpriteFade: 0
+    - _OutlineEmpty_Size_1: 1
+    - _SpriteFade: 1
     - _Stencil: 8
     - _StencilComp: 8
     - _StencilOp: 8
@@ -46,4 +50,7 @@ Material:
     - _StencilRef: 0
     - _StencilWriteMask: 8
     m_Colors:
+    - _BackgroundColor: {r: 0, g: 0, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineEmpty_Color_1: {r: 1, g: 1, b: 1, a: 1}

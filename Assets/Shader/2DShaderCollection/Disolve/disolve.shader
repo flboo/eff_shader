@@ -16,7 +16,6 @@ Shader "Custom/disolve"
         [HideInInspector]_StencilWriteMask("Stencil Write Mask", Float) = 255
         [HideInInspector]_StencilReadMask("Stencil Read Mask", Float) = 255
         [HideInInspector]_ColorMask("Color Mask", Float) = 15
-
     }
 
     SubShader
@@ -103,6 +102,7 @@ Shader "Custom/disolve"
                 c.rgb = lerp(saturate(c.rgb),c.rgb,HDR);
                 return c;
             }
+            
             float4 frag (v2f i) : COLOR
             {
                 float4 _MainTex_1 = tex2D(_MainTex, i.texcoord);

@@ -23,7 +23,7 @@ Shader "Kaima/PostProcessing/EdgeDetectionBySobel"
 			#pragma fragment frag
 			
 			#include "UnityCG.cginc"
-			#include "Assets/_Libs/Tools.cginc"
+			// #include "Assets/Shader/2DShaderCollection2/_Libs/Tools.cginc"
 
 			struct v2f
 			{
@@ -32,7 +32,7 @@ Shader "Kaima/PostProcessing/EdgeDetectionBySobel"
 			};
 
 			sampler2D _MainTex;
-			 float4 _MainTex_TexelSize;
+			float4 _MainTex_TexelSize;
 			float _Hardness;
 			
 			v2f vert (appdata_img v)
@@ -50,15 +50,20 @@ Shader "Kaima/PostProcessing/EdgeDetectionBySobel"
 				o.uv[8] = v.texcoord + _MainTex_TexelSize.xy * half2(1, 1);
 				return o;
 			}
+			float4 Luminance(in float4 c)
+			{
+				//根据人眼对颜色的敏感度，可以看见对绿色是最敏感的
+				return 0.2125 * c.r + 0.7154 * c.g + 0.0721 * c.b;
+			}
 
 			half Sobel(float2 uv[9])
 			{
 				const half verticalMask[9] = {-1, 0, 1,
-						     -2, 0, 2,
-						     -1, 0, 1};
+					-2, 0, 2,
+				-1, 0, 1};
 				const half horizontalMask[9] = {-1, -2, -1,
-						     0, 0, 0,
-						     1, 2, 1};
+					0, 0, 0,
+				1, 2, 1};
 
 				half edgeVertical = 0;
 				half edgeHorizontal = 0;
@@ -74,12 +79,14 @@ Shader "Kaima/PostProcessing/EdgeDetectionBySobel"
 			
 			fixed4 frag (v2f i) : SV_Target
 			{
-				float2 originUV = i.uv[4];
-
 				half edge = Sobel(i.uv);
 				return edge;
 			}
+
 			ENDCG
 		}
+
+		
 	}
+	Fallback off
 }

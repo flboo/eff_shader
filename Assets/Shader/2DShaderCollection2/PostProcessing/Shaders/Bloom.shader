@@ -16,7 +16,7 @@ Shader "Kaima/PostProcessing/Bloom"
 
 		CGINCLUDE
 		#include "UnityCG.cginc"
-		#include "Assets/_Libs/Tools.cginc"
+		#include "Assets/Shader/2DShaderCollection2/_Libs/Tools.cginc"
 
 		struct v2fExtract {
 			float4 vertex : SV_POSITION;

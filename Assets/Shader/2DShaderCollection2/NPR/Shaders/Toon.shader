@@ -29,7 +29,7 @@ Shader "Kaima/NPR/Toon"
 			
 			#include "UnityCG.cginc"
 			#include "Lighting.cginc"
-			#include "Assets/_Libs/Tools.cginc"
+			#include "Assets/Shader/2DShaderCollection2/_Libs/Tools.cginc"
 
 			struct v2f
 			{

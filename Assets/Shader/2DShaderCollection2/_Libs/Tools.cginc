@@ -29,11 +29,14 @@ float3 HSB2RGB(in float3 c)
 	return c.z * lerp(float3(1.0, 1.0, 1.0), rgb, c.y);
 }
 
-float Luminance(in float3 c)
+
+float4 Luminance(in float4 c)
 {
 	//根据人眼对颜色的敏感度，可以看见对绿色是最敏感的
 	return 0.2125 * c.r + 0.7154 * c.g + 0.0721 * c.b;
 }
+
+
 
 float2 CorrectUV(in float2 uv, in float4 texelSize)
 {

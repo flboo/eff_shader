@@ -24,9 +24,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - AnimatedMouvementUV_Speed_1: 0.239
-    - AnimatedMouvementUV_X_1: 0.268
-    - AnimatedMouvementUV_Y_1: 0.554
+    - AnimatedMouvementUV_Speed_1: -0.28
+    - AnimatedMouvementUV_X_1: 0.63
+    - AnimatedMouvementUV_Y_1: 0.31
     - _AlphaIntensity_Fade_1: 6
     - _ColorMask: 15
     - _Glossiness: 0.5

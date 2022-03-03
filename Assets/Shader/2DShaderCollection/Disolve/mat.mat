@@ -31,15 +31,15 @@ Material:
     - AnimatedMouvementUV_Speed_1: 0.239
     - AnimatedMouvementUV_X_1: 0.268
     - AnimatedMouvementUV_Y_1: 0.554
-    - Disolve_Value: 0.238
-    - Seed: 8
+    - Disolve_Value: 0.451
+    - Seed: -2.1
     - _AlphaIntensity_Fade_1: 6
     - _AutomaticLerp_Spee_1: 0.595
     - _ColorMask: 15
     - _Glossiness: 0.5
     - _LerpUV_Fade_1: 0
     - _Metallic: 0
-    - _SpriteFade: 1
+    - _SpriteFade: 0.981
     - _Stencil: 8
     - _StencilComp: 8
     - _StencilOp: 8

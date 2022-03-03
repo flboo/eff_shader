@@ -3,18 +3,20 @@
     Properties
     {
 
-        [PerRendererData] _MainTex("Sprite Texture",2D)="white" {}
+        [PerRendererData] 
+        _MainTex("Sprite Texture",2D)="white" {}
         _NewTex_1("NewTex_1(RGB)",2D)="white"{}
         _AutomaticLerp_Spee_1("AutomaticLerp_Spee_1",Range(0,1))=1
         _SpriteFade("SpriteFade",Range(0,1))=1.0
 
         
-        [HideInInspector]_StencilRef("_Stencil Ref",float)=8
-        [HideInInspector]_StencilComp("_Stencil Comp",float)=0
-        [HideInInspector]_StencilPass("_Stencil Pass",float)=0
-        [HideInInspector]_StencilReadMask("_Stencil ReadMask",float)=255
-        [HideInInspector]_StencilWriteMask("_Stencil WriteMask",float)=255
-        [HideInInspector]_ColorMask("Color Mask", Float) = 15
+        // [HideInInspector]_StencilRef("_Stencil Ref",float)=8
+        // [HideInInspector]_StencilComp("_Stencil Comp",float)=0
+        // [HideInInspector]_StencilPass("_Stencil Pass",float)=0
+        // [HideInInspector]_StencilReadMask("_Stencil ReadMask",float)=255
+        // [HideInInspector]_StencilWriteMask("_Stencil WriteMask",float)=255
+        // [HideInInspector]_ColorMask("Color Mask", Float) = 15
+        
     }
 
     SubShader
@@ -25,14 +27,14 @@
         Cull Off
 
         // required for UI.Mask
-        Stencil
-        {
-            Ref [_Stencil]
-            Comp [_StencilComp]
-            Pass [_StencilOp]
-            ReadMask [_StencilReadMask]
-            WriteMask [_StencilWriteMask]
-        }
+        // Stencil
+        // {
+            //     Ref [_Stencil]
+            //     Comp [_StencilComp]
+            //     Pass [_StencilOp]
+            //     ReadMask [_StencilReadMask]
+            //     WriteMask [_StencilWriteMask]
+        // }
 
         Pass
         {
@@ -40,7 +42,7 @@
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            #pragma fragmentoption ARB_precision_hint_fastest
+            // #pragma fragmentoption ARB_precision_hint_fastest
             #include  "UnityCG.cginc"
             
             struct a2v{
@@ -59,7 +61,7 @@
             sampler2D _MainTex;
             sampler2D _NewTex_1;
             float _AutomaticLerp_Spee_1;
-            float _SpriteFade;
+            // float _SpriteFade;
 
             v2f vert(a2v IN)
             {

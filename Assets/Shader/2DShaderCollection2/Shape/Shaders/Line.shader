@@ -17,7 +17,7 @@
 			#pragma fragment frag
 			
 			#include "UnityCG.cginc"
-			#include "Assets/_Libs/Tools.cginc"
+			#include "Assets/Shader/2DShaderCollection2/_Libs/Tools.cginc"
 
 			struct appdata
 			{
@@ -42,7 +42,7 @@
 				o.uv = v.uv;
 				return o;
 			}
- 
+			
 			fixed4 frag (v2f i) : SV_Target
 			{
 				return Line(_StartEnd.xy, _StartEnd.zw, _Width, _Antialias, i.uv);               

@@ -2,7 +2,8 @@
 using System.Collections;
 
 [ExecuteInEditMode]
-public class PostProcessing : MonoBehaviour {
+public class PostProcessing : MonoBehaviour
+{
     public Material mat;
 
     protected void Start()
@@ -13,7 +14,7 @@ public class PostProcessing : MonoBehaviour {
     //[ImageEffectOpaque] //在渲染完不透明物体后马上执行
     protected virtual void OnRenderImage(RenderTexture src, RenderTexture dest)
     {
-        if(mat != null)
+        if (mat != null)
         {
             Graphics.Blit(src, dest, mat);
         }
@@ -25,11 +26,11 @@ public class PostProcessing : MonoBehaviour {
 
     protected bool CheckSupport()
     {
-        if(SystemInfo.supportsImageEffects == false || SystemInfo.supportsRenderTextures == false)
-        {
-            Debug.LogWarning("This platform dont support postprocssing");
-            return false;
-        }
+        // if (SystemInfo.supportsImageEffects == false || SystemInfo.supportsRenderTextures == false)
+        // {
+        //     Debug.LogWarning("This platform dont support postprocssing");
+        //     return false;
+        // }
 
         return true;
     }

@@ -73,7 +73,6 @@ Shader "Custom/outline"
 
             float4 OutLineEmpty(float2 uv,sampler2D source, float value, float4 color)
             {
-
                 value*=0.005;
                 float4 mainColor = tex2D(source, uv + float2(-value, value))
                 + tex2D(source, uv + float2(value, -value))
@@ -83,10 +82,19 @@ Shader "Custom/outline"
                 color*=2;
                 mainColor.rgb = color;
                 float4 addcolor = tex2D(source, uv);
-                if (mainColor.a > 0.40) { mainColor = color; }
-                if (addcolor.a > 0.40) { mainColor.a = addcolor.a;mainColor.rgb=addcolor.rgb; }
+                if (mainColor.a > 0.40)
+                {
+                    mainColor = color; 
+                }
+                if (addcolor.a > 0.40)
+                { 
+                    mainColor.a = addcolor.a;
+                    mainColor.rgb=addcolor.rgb; 
+                }
                 return mainColor;
             }
+
+
             float4 frag (v2f i) : COLOR
             {
                 float4 _OutlineEmpty_1 = OutLineEmpty(i.texcoord,_MainTex,_OutlineEmpty_Size_1,_OutlineEmpty_Color_1);
